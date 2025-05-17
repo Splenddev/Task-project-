@@ -26,6 +26,25 @@
 }
 .data-image {
   margin: 15px 0;
+  & img {
+    width: 100%;
+  }
+}
+.preview-product-data .text {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+  & span {
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+}
+.preview-product-data hr {
+  margin: 20px 0;
+  height: 1px;
+  width: 100%;
+  background: #aaa;
+  border: none;
 }
 .preview-product-data .data-header {
   display: grid;

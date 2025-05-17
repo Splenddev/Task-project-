@@ -28,7 +28,6 @@ const ProductInfo = ({
           }></textarea>
       )}
       <p>Give your product a short and clear {type}</p>
-      <p>{isEmpty.toString()}</p>
     </div>
   );
 };

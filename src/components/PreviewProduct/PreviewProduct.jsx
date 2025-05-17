@@ -24,14 +24,15 @@ const PreviewProduct = ({
               alt={product.name}
             />
           </div>
-          <p>
+          <div className="text">
             <span>Name</span>
             {product.name}
-          </p>
-          <p>
+          </div>
+          <div className="text">
             <span>description</span>
             {product.description}
-          </p>
+          </div>
+          <hr />
           <div className="action">
             <p>Are you sure of this product.</p>
             <div className="action-btns">
@@ -43,7 +44,11 @@ const PreviewProduct = ({
                 <FaTrashCan />
                 Delete
               </button>
-              <button>
+              <button
+                onClick={() => {
+                  alert('Product added');
+                  clearData();
+                }}>
                 <FaPlus />
                 Yes, Add
               </button>

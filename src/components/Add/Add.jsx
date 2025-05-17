@@ -11,6 +11,7 @@ const Add = () => {
     name: true,
     description: true,
     image: true,
+    message: false,
   });
   const [data, setData] = useState({
     name: '',
@@ -127,15 +128,28 @@ const Add = () => {
         />
 
         <div className="add-buttons">
+          {isEmpty.message && (
+            <div className="is-empty">
+              <p>Add product name, description and image.</p>
+              <button
+                onClick={() =>
+                  setIsEmpty((prev) => ({ ...prev, message: false }))
+                }>
+                OK
+              </button>
+            </div>
+          )}
           <button>
             <FaArrowLeft /> Cancel
           </button>
           <button
             onClick={() => {
-              if (isEmpty.name || isEmpty.description || isEmpty.image) return;
+              if (isEmpty.name || isEmpty.description || isEmpty.image) {
+                setIsEmpty((prev) => ({ ...prev, message: !prev.message }));
+                return;
+              }
               setPreview(true);
-            }}
-            disabled={isEmpty.name || isEmpty.description || isEmpty.image}>
+            }}>
             Preview Product
           </button>
         </div>
